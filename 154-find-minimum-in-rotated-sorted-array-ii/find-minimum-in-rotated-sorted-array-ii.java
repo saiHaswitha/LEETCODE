@@ -1,0 +1,36 @@
+class Solution {
+    public int findMin(int[] nums) 
+    {
+        int n = nums.length;
+        int s = 0;
+        int e = n-1;
+
+        // int ans = Integer.MAX_VALUE;
+
+       
+        while(s <= e)
+        {
+        int mid = (s+e)/2;
+
+
+        if(nums[mid] < nums[e])
+        {
+            e = mid;
+        }
+        else if(nums[mid] > nums[e])
+            {
+                // ans = Math.min(ans, nums[s]);
+                s = mid+1;
+            }
+            
+
+            else if(nums[mid] == nums[e]){
+                // ans = Math.min(ans, nums[mid]);
+                // e = mid-1;   
+                e--;
+            }
+        }
+        return nums[s];
+        
+    }
+}
